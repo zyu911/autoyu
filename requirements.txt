@@ -4,5 +4,5 @@ numpy
 celery
 redis
 pandas
-ppp
-
+pypiwin32
+pytesseract
