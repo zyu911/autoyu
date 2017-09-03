@@ -18,6 +18,10 @@ class Mapper(object):
     def value(cls):
         return Mapper.__mapper_relation[cls]
 
+    @staticmethod
+    def relation(relation):
+        Mapper.__mapper_relation = relation
+
 
 class MyType(type):
     def __call__(cls, *args, **kwargs):
@@ -30,32 +34,32 @@ class MyType(type):
         return obj
 
 
-class Test(object):
-    def __init__(self):
-        pass
-
-    def te(self):
-        print('test')
-
-
-class Foo(metaclass=MyType):
-    def __init__(self, test):
-        self.test = test
-
-    def f1(self):
-        print(self.name)
-
-
-class Bar(metaclass=MyType):
-    def __init__(self, foo):
-        self.foo = foo
-
-    def f1(self):
-        print(self.name)
-
-
-Mapper.register(Foo, Test())
-Mapper.register(Bar, Foo())
-obj = Bar()
-obj.foo.test.te()
+# class Test(object):
+#     def __init__(self):
+#         pass
+#
+#     def te(self):
+#         print('test')
+#
+#
+# class Foo(metaclass=MyType):
+#     def __init__(self, test):
+#         self.test = test
+#
+#     def f1(self):
+#         print(self.name)
+#
+#
+# class Bar(metaclass=MyType):
+#     def __init__(self, foo):
+#         self.foo = foo
+#
+#     def f1(self):
+#         print(self.name)
+#
+#
+# Mapper.register(Foo, Test())
+# Mapper.register(Bar, Foo())
+# obj = Bar()
+# obj.foo.test.te()
 

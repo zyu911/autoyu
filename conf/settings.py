@@ -10,5 +10,5 @@ redis_host = config('REDIS_HOST')
 redis_port = config('REDIS_PORT')
 
 mapper = {
-    win_control: win_method,
+    win_control.WinControl: win_method.PicToData(),
 }
