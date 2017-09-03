@@ -1,8 +1,11 @@
 pillow
 python-decouple
-numpy
+numpy==1.9.2
 celery
 redis
 pandas
-pypiwin32
+# pypiwin32
 pytesseract
+
+
+
